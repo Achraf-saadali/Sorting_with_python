@@ -87,7 +87,7 @@ def fusion_sort(L:list[int])->list[int]:
             k += 1 
             j += 1    
 
-        return L   
+    return L   
     
           
 
