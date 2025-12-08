@@ -20,7 +20,7 @@ def select_sort(L : list[int])->list[int] :
 
 
     return L
-
+print(select_sort(M))  
 # bubble_sort
 def bubble_sort(L: list[int])->list[int] :
     if len(L) <= 1 :
@@ -34,7 +34,7 @@ def bubble_sort(L: list[int])->list[int] :
 
     return L            
 
-
+print(bubble_sort(M))  
 
 # quick sort
 def quick_sort(L:list[int]) -> list[int] :
@@ -49,6 +49,51 @@ def quick_sort(L:list[int]) -> list[int] :
 
 
 print(quick_sort(M))        
+
+
+#fusion_sort
+def fusion_sort(L:list[int])->list[int]:
+
+    if len(L) <= 1:
+        return L
+    
+    length : int = len(L) // 2
+
+    A = fusion_sort(L[:length])
+    B = fusion_sort(L[length:])
+
+    i : int = 0 
+    j : int = 0 
+    k : int = 0
+    L = []
+    while i < len(A) & j < len(B) & k < len(L):
+
+        if A[i] > B[j]:
+            L[k] = B[j]
+            j += 1
+
+        else:
+            L[k] = A[i] 
+            i += 1
+        k += 1
+
+        while i < len(A) & k < len(L):
+            L[k] = A[i]
+            k += 1 
+            i += 1     
+
+        while j < len(B) & k < len(L):
+            L[k] = B[j]
+            k += 1 
+            j += 1    
+
+        return L   
+    
+          
+
+    
+    
+
 
 
 
