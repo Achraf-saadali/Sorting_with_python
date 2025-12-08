@@ -77,12 +77,12 @@ def fusion_sort(L:list[int])->list[int]:
             i += 1
         k += 1
 
-        while i < len(A) & k < len(L):
+    while i < len(A) & k < len(L):
             L[k] = A[i]
             k += 1 
             i += 1     
 
-        while j < len(B) & k < len(L):
+    while j < len(B) & k < len(L):
             L[k] = B[j]
             k += 1 
             j += 1    
