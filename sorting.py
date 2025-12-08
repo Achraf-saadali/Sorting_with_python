@@ -61,36 +61,36 @@ def fusion_sort(L:list[int])->list[int]:
 
     A = fusion_sort(L[:length])
     B = fusion_sort(L[length:])
-
+    
     i : int = 0 
     j : int = 0 
     k : int = 0
-    L = []
-    while i < len(A) & j < len(B) & k < len(L):
+    M = [0]*len(L)
+    while i < len(A) and j < len(B) and k < len(L) :
 
         if A[i] > B[j]:
-            L[k] = B[j]
+            M[k] = B[j]
             j += 1
 
         else:
-            L[k] = A[i] 
+            M[k] = A[i] 
             i += 1
         k += 1
 
-    while i < len(A) & k < len(L):
-            L[k] = A[i]
+    while i < len(A) and k < len(L):
+            M[k] = A[i]
             k += 1 
             i += 1     
 
-    while j < len(B) & k < len(L):
-            L[k] = B[j]
+    while j < len(B) and k < len(L):
+            M[k] = B[j]
             k += 1 
             j += 1    
 
-    return L   
+    return M
     
           
-
+print("fusion sort is this : ..... ",fusion_sort(M))
     
     
 
