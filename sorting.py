@@ -65,7 +65,7 @@ def fusion_sort(L:list[int])->list[int]:
     i : int = 0 
     j : int = 0 
 
-    M = [0]*(len(A)+len(B))
+    M = []
     while i < len(A) and j < len(B) :
 
         if A[i] > B[j]:
